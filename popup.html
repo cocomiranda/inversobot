@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html style="height: 330px;">
+<head>
+	<title>InversoBot</title>
+	
+	<div id="twitter" class="bottom" style="display: block; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">Seguinos en Twitter en 
+			<a href="https://twitter.com/InversoBot" target="_blank" style="color: black" >@InversoBot</a> 
+	</div>
+	   
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+	<div class="tab">
+		<button class="tablinks" id="btnDolar" style="display: inline; left: 70px;">COTIZACIONES DOLAR</button>
+		<button class="tablinks" id="btnEarn" style="display: inline; left: 80px;">EARN</button>
+		<!-- <button class="tablinks" id="btnCoins" style="display: inline; left: 85px;">SUPPORTED COINS</button> -->
+		<br>
+		<button class="tablinks" id="btnDai" style="display: inline; left: 50px;">DAI/ARS</button>
+		<button class="tablinks" id="btnUsdt" style="display: inline; left: 60px;">USDT/ARS</button>
+		<button class="tablinks" id="btnUsdc" style="display: inline; left: 70px;">USDC/ARS</button>
+		<br>
+		<button class="tablinks" id="btnBtc" style="display: inline; left: 100px;">BTC/ARS</button>
+		<button class="tablinks" id="btnEth" style="display: inline; left: 110px;">ETH/ARS</button>
+		<br>
+		<button class="tablinks2" id="btnAda" style="display: inline; left: 40px;">ADA</button>
+		<button class="tablinks2" id="btnBnb" style="display: inline; left: 50px;">BNB</button>
+		<button class="tablinks2" id="btnSol" style="display: inline; left: 60px;">SOL</button>
+		<button class="tablinks2" id="btnDot" style="display: inline; left: 70px;">DOT</button>
+		<button class="tablinks2" id="btnMatic" style="display: inline; left: 80px;">MATIC</button>
+		<!-- <button class="tablinks" id="btnWallet" style="display: inline; left: 140px; top: 10px;">REFERIDOS</button> -->
+
+	</div>
+</head>
+<body>
+	<table border="0" class="dataframe mystyle" id="tabla1">
+	<thead>
+		<button class="tablinks" id="btnBelo" style="display: none; left: 10px; top: 30px;">BELO</button>
+		<button class="tablinks" id="btnBuenbit" style="display: none; left: 20px; top: 30px;">BUENBIT</button>
+		<button class="tablinks" id="btnRipio" style="display: none; left: 30px; top: 30px;">RIPIO</button>
+		<button class="tablinks" id="btnSatoshi" style="display: none; left: 40px; top: 30px;">SATOSHI TANGO</button>
+	</thead>
+	<tbody id="dolar_table" style="display: none; margin-bottom: 200px; margin-left: 8px;">
+		<tr>
+			<th style="column-width: 50px;"></th>
+			<th style="column-width: 100px;">COMPRA</th>
+			<th style="column-width: 100px;">VENTA</th>
+		</tr>
+		<!-- <input id="pesos_input" style="display: none;"></input>
+		<input id="dolar_input" style="display: none;"></input>
+		<button id="enter_boton" style="display: none;">Convertir</button>
+		<input id="oficial_input" style="display: none;"></input>
+		<input id="blue_input" style="display: none;"></input> -->
+	</tbody>
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+		  <span class="close">&times;</span>
+		  <p>Ingrese una valor a convertir</p>
+		</div>
+	  
+	</div>
+
+	<tbody id="dai_ars_table" style="display: none; margin-left: 22px; margin-bottom: 20px;">
+		<tr>
+			<th id="sort_dai_name" style="column-width: 50px; padding-bottom: 5px"><img style="margin-top: 3px; width:22px; height:22px " src="logos/dai.svg"></th>
+			<th id="sort_dai_compra" style="column-width: 100px;">COMPRA</th>
+			<th id="sort_dai_venta" style="column-width: 100px;">VENTA</th>
+		</tr>
+	</tbody>
+
+	<tbody id="btc_ars_table" style="display: none; margin-left: 22px; margin-bottom: 20px;">
+		<tr>
+			<th id="sort_btc_name" style="column-width: 50px;"><img style="margin-top: 3px; width:22px; height:22px " src="logos/btc.svg"></th>
+			<th id="sort_btc_compra" style="column-width: 100px;">COMPRA</th>
+			<th id="sort_btc_venta" style="column-width: 100px;">VENTA</th>
+		</tr>
+	</tbody>
+
+	<tbody id="eth_ars_table" style="display: none; margin-left: 22px; margin-bottom: 20px;">
+		<tr>
+			<th id="sort_eth_name" style="column-width: 50px;"><img style="margin-top: 3px; width:22px; height:22px " src="logos/eth.svg"></th>
+			<th id="sort_eth_compra" style="column-width: 100px;">COMPRA</th>
+			<th id="sort_eth_venta" style="column-width: 100px;">VENTA</th>
+		</tr>
+	</tbody>
+
+	<tbody id="usdt_ars_table" style="display: none; margin-left: 22px; margin-bottom: 20px;">
+		<tr>
+			<th id="sort_usdt_name" style="column-width: 50px;"><img style="margin-top: 3px; width:22px; height:22px " src="logos/usdt.svg"></th>
+			<th id="sort_usdt_compra" style="column-width: 100px;">COMPRA</th>
+			<th id="sort_usdt_venta" style="column-width: 100px;">VENTA</th>
+		</tr>
+	</tbody>
+	<tbody id="usdc_ars_table" style="display: none; margin-left: 22px; margin-bottom: 20px;">
+		<tr>
+			<th id="sort_usdc_name" style="column-width: 50px;"><img style="margin-top: 3px; width:22px; height:22px " src="logos/usdc.svg"></th>
+			<th id="sort_usdc_compra" style="column-width: 100px;">COMPRA</th>
+			<th id="sort_usdc_venta" style="column-width: 100px;">VENTA</th>
+		</tr>
+	</tbody>
+
+	<tbody id="ada_ars_table" style="display: none; margin-left: 22px; margin-bottom: 20px;">
+		<tr>
+			<th id="sort_ada_name" style="column-width: 50px;"><img style="margin-top: 3px; width:22px; height:22px " src="logos/ada.svg"></th>
+			<th id="sort_ada_compra" style="column-width: 100px;">COMPRA</th>
+			<th id="sort_ada_venta" style="column-width: 100px;">VENTA</th>
+		</tr>
+	</tbody>
+	<tbody id="bnb_ars_table" style="display: none; margin-left: 22px; margin-bottom: 20px;">
+		<tr>
+			<th id="sort_bnb_name" style="column-width: 50px;"><img style="margin-top: 3px; width:22px; height:22px " src="logos/bnb.svg"></th>
+			<th id="sort_bnb_compra" style="column-width: 100px;">COMPRA</th>
+			<th id="sort_bnb_venta" style="column-width: 100px;">VENTA</th>
+		</tr>
+	</tbody>
+	<tbody id="sol_ars_table" style="display: none; margin-left: 22px; margin-bottom: 20px;">
+		<tr>
+			<th id="sort_sol_name" style="column-width: 50px;"><img style="margin-top: 3px; width:22px; height:22px " src="logos/sol.svg"></th>
+			<th id="sort_sol_compra" style="column-width: 100px;">COMPRA</th>
+			<th id="sort_sol_venta" style="column-width: 100px;">VENTA</th>
+		</tr>
+	</tbody>
+	<tbody id="dot_ars_table" style="display: none; margin-left: 22px; margin-bottom: 20px;">
+		<tr>
+			<th id="sort_dot_name" style="column-width: 50px;"><img style="margin-top: 3px; width:22px; height:22px " src="logos/dot.svg"></th>
+			<th id="sort_dot_compra" style="column-width: 100px;">COMPRA</th>
+			<th id="sort_dot_venta" style="column-width: 100px;">VENTA</th>
+		</tr>
+	</tbody>
+	<tbody id="matic_ars_table" style="display: none; margin-left: 22px; margin-bottom: 20px;">
+		<tr>
+			<th id="sort_matic_name" style="column-width: 50px;"><img style="margin-top: 3px; width:22px; height:22px " src="logos/matic.svg"></th>
+			<th id="sort_matic_compra" style="column-width: 100px;">COMPRA</th>
+			<th id="sort_matic_venta" style="column-width: 100px;">VENTA</th>
+		</tr>
+	</tbody>
+
+	<tbody id="earn_table" style="display: none; width: 300px; margin-left: 22px;">
+		<tr>
+			<th style="column-width: 110px;">EXCHANGE</th>
+			<th style="column-width: 70px;">USDT</th>
+			<th style="column-width: 70px;">USDC</th>
+			<th style="column-width: 70px;">DAI</th>
+			<th style="column-width: 70px;">BTC</th>
+			<th style="column-width: 70px;">ETH</th>
+		</tr>
+	</tbody>
+
+	<tbody id="coins_table" style="display: none;">
+		<tr>
+			<!-- <th style="column-width: 100px;"></th>
+			<th style="column-width: 100px;">SUPPORTED COINS</th> -->
+		</tr>
+	</tbody>
+
+	
+	<br>
+
+	<div id="belo_qr" class="bottom" style="display: none; left: 30px; top: 10px; width: 270px;">Ey! Estuve usando Belo para comprar y vender criptomonedas de la manera mas simple y sin pagar comisiones! <br><br>
+		Deberias darle una oportunidad! <br><br>
+		Podes ingresar escaneando el siguiente codigo QR: <br><br>
+		<img src="https://www.codigos-qr.com/qr/php/qr_img.php?d=https%3A%2F%2Fsimple.belo.app%2Fapp%2Freferral%3FreferralId%3DFtD65VBF%26campaign%3DREVENUE_SHARING&s=8&e=m" height="100" width="100" style="margin-left: 100px;">
+	</div>
+
+	<div id="buenbit_qr" class="bottom" style="display: none; left: 30px; top: 10px; width: 270px;">Llevate 1500 ARS en cripto! <br><br>
+		Buenbit: inverti tus criptomonedas desde Argentina. <br><br>
+		Registrate con el codigo SXD9LBV <br><br>
+		Inverti 50 dolares en DAI, ETH o BTC y dejalos rindiendo por 30 dias. <br>
+		Tenes 30 dias desde que te registrss para poner a invertir tus criptos. <br><br>
+		Podes ingresar escaneando el siguiente codigo QR: <br><br>
+		<img src="https://www.codigos-qr.com/qr/php/qr_img.php?d=https%3A%2F%2Fwww.buenbit.com%2Fes-ar&s=8&e=m" height="100" width="100" style="margin-left: 100px;">
+	</div>
+
+	<div id="ripio_qr" class="bottom" style="display: none; left: 30px; top: 10px; width: 270px;">Te invitaron a Ripio! <br><br>
+		Sumate hoy a la nueva economia. <br><br>
+		Abri tu cuenta, segui los pasos para activarla y empeza tu camino <br><br>
+		Podes ingresar escaneando el siguiente codigo QR: <br><br>
+		<img src="https://www.codigos-qr.com/qr/php/qr_img.php?d=https%3A%2F%2Fauth.ripio.com%2F%23%2Fregister%2F&s=8&e=m" height="100" width="100" style="margin-left: 100px;">
+	</div>
+
+	
+
+	<div id="satoshi_qr" class="bottom" style="display: none; left: 30px; top: 10px; width: 270px;">Registrate en SatoshiTango y recibi 0% de comision en tus operaciones por los proximos 10 dias utilizando el siguiente codigo de referido: WHYCAC8Q <br><br>
+
+		Podes ingresar escaneando el siguiente codigo QR: <br><br>
+		<img src="https://www.codigos-qr.com/qr/php/qr_img.php?d=https%3A%2F%2Fwww.satoshitango.com%2Fgift%2FWHYCAC8Q&s=8&e=m" height="100" width="100" style="margin-left: 100px;">
+	</div>
+
+
+
+
+
+
+	<script src="content.js" type="application/javascript"></script>
+
+	<!-- <canvas id="canvas1" width="350" height="80" style="border:1px solid #d3d3d3; margin-left: 12px; margin-bottom: 10px;"></canvas>
+	<canvas id="canvas2" width="350" height="80" style="border:1px solid #d3d3d3; margin-left: 12px; margin-bottom: 10px;"></canvas>
+	<canvas id="canvas2" width="350" height="80" style="border:1px solid #d3d3d3; margin-left: 12px; margin-bottom: 10px;"></canvas>
+	<br>
+	<script type="text/javascript">
+		
+	</script> -->
+</body>
+
+</html>
